@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/select_country"
+            android:title="Выбрать страну" />
+        <item
+            android:id="@+id/saved_countries"
+            android:title="Сохраненные страны" />
+        <item
+            android:id="@+id/country_info"
+            android:title="Информация о стране" />
+        <item
+            android:id="@+id/author_info"
+            android:title="Об авторе" />
+    </group>
+</menu>

@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Путеводитель</string>
+    <string name="country_name">Страна: Россия</string>
+    <string name="country_square">Площадь: 17 125 191 км^2</string>
+    <string name="app_version">Версия: 1.0</string>
+    <string name="auth_name">Автор: Архипов Валерий Иванович</string>
+
+    <string name="f_count_inf">О стране</string>
+    <string name="f_auth">Об авторе</string>
+    <string name="f_saved_countries">Сохраненные страны</string>
+    <string name="f_select_country">Выбрать страну</string>
+
+    <string-array name="countries">
+        <item>Австралия</item>
+        <item>Англия</item>
+        <item>Белорусия</item>
+        <item>Бразилия</item>
+        <item>Германия</item>
+        <item>Греция</item>
+        <item>Грузия</item>
+        <item>Дания</item>
+        <item>Египет</item>
+        <item>Израиль</item>
+        <item>Индия</item>
+        <item>Ирак</item>
+        <item>Иран</item>
+        <item>Испания</item>
+        <item>Италия</item>
+        <item>Латвия</item>
+        <item>Литва</item>
+        <item>Мексика</item>
+        <item>Монголия</item>
+        <item>Россия</item>
+        <item>Румыния</item>
+        <item>Сальвадор</item>
+        <item>Самоа</item>
+        <item>Сенегал</item>
+        <item>Канада</item>
+    </string-array>
+
+</resources>
