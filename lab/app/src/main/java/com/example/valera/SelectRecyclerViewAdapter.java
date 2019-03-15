@@ -44,9 +44,9 @@ public class SelectRecyclerViewAdapter extends
     public void onBindViewHolder(SelectViewHolder holder, int position) {
         holder.mTextView.setText(mDataset.get(position));
 
-        if (mDataset.get(position).length() < 6) {
+        if (gg.recyclerData.get(position).length() < 6) {
             holder.mTextView.setTextColor(Color.RED);
-        } else if (mDataset.get(position).length() > 7) {
+        } else if (gg.recyclerData.get(position).length() > 7) {
             holder.mTextView.setTextColor(Color.GREEN);
         } else {
             holder.mTextView.setTextColor(Color.BLUE);
@@ -54,6 +54,6 @@ public class SelectRecyclerViewAdapter extends
     }
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return gg.recyclerData.size();
     }
 }

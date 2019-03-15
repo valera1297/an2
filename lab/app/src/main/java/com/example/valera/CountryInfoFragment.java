@@ -21,12 +21,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class CountryInfoFragment extends Fragment {
+
 
 
     public CountryInfoFragment() {
@@ -40,79 +43,8 @@ public class CountryInfoFragment extends Fragment {
         // Inflate the layout for this fragment
         MyAsyncTask myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute("InputString");
+
         return inflater.inflate(R.layout.fragment_country_info, container, false);
     }
 
-}
-class MyGSON {
-    @SerializedName("BriefInformation")
-    @Expose
-    public Integer BriefInformation;
-
-    @SerializedName("Capital")
-    @Expose
-    public String Capital;
-
-    @SerializedName("Name")
-    @Expose
-    public String Name;
-}
-
-class MyAsyncTask extends AsyncTask<String, Integer, String> {
-    URL url = null;
-    HttpURLConnection conn = null;
-    protected void onPreExecute(){
-
-        try {
-            url = new URL("https://raw.githubusercontent.com/Dmtittrriy/testjasonlab/master/Guide.json");
-        } catch (MalformedURLException e) {
-
-            e.printStackTrace();
-        }
-
-
-        try {
-            conn = (HttpURLConnection) url.openConnection();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
-        Log.e("MyAsyncTask", "onPreExecute");
-    }
-    protected String doInBackground(String... arg) {
-        StringBuilder response = null;
-        try {
-            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK)
-            {
-                response = new StringBuilder();
-                BufferedReader input = new BufferedReader(new InputStreamReader
-                        (conn.getInputStream()), 8192);
-                String line = null;
-                while ((line = input.readLine()) != null)
-                {
-                    response.append(line);
-                }
-                input.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Log.e("MyAsyncTask", response + "");
-        return response + "";
-    }
-    protected void onPostExecute(String output) {
-        Gson gson = new Gson();
-        MyGSON[] myjson = gson.fromJson(output, MyGSON[].class);
-
-
-        for(int i = 0; i< myjson.length; i++){
-
-            Log.e("MyAsyncTask", "BriefInformation  = " + myjson[i].BriefInformation +
-                    "; Capital = " + myjson[i].Capital +  "; Name = " + myjson[i].Name);
-        }
-
-    }
 }
